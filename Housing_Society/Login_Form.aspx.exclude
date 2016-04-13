@@ -1,0 +1,740 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPage.master" AutoEventWireup="true" CodeFile="Login_Form.aspx.cs" Inherits="Login_Form" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
+    <style type="text/css">
+        .style3
+        {
+            width: 100%;
+            color: #FF0000;
+            font-size: medium;
+            font-weight: 700;
+            font-family: "Segoe UI";
+           <%-- background-image: url('Images/wal2.jpg');--%>;
+            background-color: #FF6600;
+        }
+        .style4
+        {
+            width: 200px;
+        }
+        .style5
+        {
+            width: 200px;
+            font-family: "Segoe UI";
+            font-size: medium;
+            color: #800080;
+        }
+        .style6
+        {
+            width: 187px;
+        }
+        .style7
+        {
+            width: 36px;
+        }
+        .style8
+        {
+            width: 185px;
+        }
+        .style9
+        {
+            width: 185px;
+            color: #000080;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+    <table class="style3" bgcolor="White">
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style5">
+                <strong>ADMIN LOGIN</strong></td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                <hr style="height: 10px; color: #000000; background-color: #000000;" />
+            </td>
+            <td class="style9">
+                CUSTOMER LOGIN</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                UserName:-</td>
+            <td class="style6">
+                <asp:TextBox ID="txt_UserName" runat="server" TextMode="Email"></asp:TextBox>
+            </td>
+            <td class="style7">
+                <hr style="height: 10px; color: #000000; background-color: #000000;" />
+            </td>
+            <td class="style8">
+                UserName:-</td>
+            <td class="style6">
+                <asp:TextBox ID="txt_UserID" runat="server" TextMode="Email"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                Password:-</td>
+            <td class="style6">
+                <asp:TextBox ID="txt_Password" runat="server" TextMode="Password"></asp:TextBox>
+            </td>
+            <td class="style7">
+                <hr style="height: 10px; color: #000000; background-color: #000000;" />
+            </td>
+            <td class="style8">
+                Password:-</td>
+            <td class="style6">
+                <asp:TextBox ID="txt_UserPassword" runat="server" TextMode="Password"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                <hr style="height: 10px; color: #000000; background-color: #000000;" />
+            </td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click">Forgot Password???</asp:LinkButton>
+            </td>
+            <td class="style6">
+                <asp:ImageButton ID="btn_AdminLogin" runat="server" Height="49px" 
+                    ImageUrl="~/Images/Emblem_of_India.svg - Copy.png" ToolTip="LOG-IN" Width="56px" 
+                    onclick="btn_AdminLogin_Click" />
+            </td>
+            <td class="style7">
+                <hr style="height: 10px; color: #000000; background-color: #000000;" />
+            </td>
+            <td class="style8">
+                <asp:LinkButton ID="LinkButton3" runat="server" onclick="LinkButton3_Click">Forgot Password???</asp:LinkButton>
+            </td>
+            <td>
+                <asp:ImageButton ID="btn_UserLogin" runat="server" Height="49px" 
+                    ImageUrl="~/Images/Emblem_of_India.svg - Copy.png" onclick="btn_UserLogin_Click" 
+                    ToolTip="LOG-IN" Width="56px" />
+            </td>
+            <td>
+                <asp:ImageButton ID="btn_NewReg" runat="server" Height="53px" 
+                    ImageUrl="~/Images/New_Reg.jpg" Width="72px" onclick="btn_NewReg_Click" />
+            </td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+    </table>
+</asp:Content>
+

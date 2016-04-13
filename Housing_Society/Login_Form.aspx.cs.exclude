@@ -1,0 +1,70 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+
+public partial class Login_Form : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+    protected void LinkButton1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Admin_Forgot.aspx");
+    }
+    protected void LinkButton3_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Customer_Forgot.aspx");
+    }
+
+    protected void btn_UserLogin_Click(object sender, ImageClickEventArgs e)
+    {
+        SqlConnection con = new SqlConnection("Data Source=ANMOL-PC;Initial Catalog=HousingDb;Integrated Security=True");
+        con.Open();
+        SqlCommand cmd = new SqlCommand("select * from tbl_User_Login where email =@email and password =@password", con);
+        cmd.Parameters.AddWithValue("@email", txt_UserID.Text);
+        cmd.Parameters.AddWithValue("@password", txt_UserPassword.Text);
+        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        DataTable dt = new DataTable();
+        da.Fill(dt);
+        if (dt.Rows.Count > 0)
+        {
+            Response.Redirect("Consumer_Main_Page.aspx");
+        }
+        else
+        {
+            ClientScript.RegisterStartupScript(Page.GetType(), "validation", "<script language='javascript'>alert('Invalid Username and Password')</script>");
+        }
+
+    }
+    protected void btn_NewReg_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("New_Registration.aspx");
+    }
+    protected void btn_AdminLogin_Click(object sender, ImageClickEventArgs e)
+    {
+        SqlConnection con = new SqlConnection("Data Source=ANMOL-PC;Initial Catalog=HousingDb;Integrated Security=True");
+        con.Open();
+        SqlCommand cmd = new SqlCommand("select * from tbl_Admin_Login where email =@email and password =@password", con);
+        cmd.Parameters.AddWithValue("@email", txt_UserName.Text);
+        cmd.Parameters.AddWithValue("@password", txt_Password.Text);
+        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        DataTable dt = new DataTable();
+        da.Fill(dt);
+        if (dt.Rows.Count > 0)
+        {
+            Response.Redirect("Default.aspx");
+        }
+        else
+        {
+            ClientScript.RegisterStartupScript(Page.GetType(), "validation", "<script language='javascript'>alert('Invalid Username and Password')</script>");
+        }
+
+    }
+}
